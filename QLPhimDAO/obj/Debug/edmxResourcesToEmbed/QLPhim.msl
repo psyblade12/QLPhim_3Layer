@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLPhimModelStoreContainer" CdmEntityContainer="QLPhimEntities">
+    <EntitySetMapping Name="BaoGoms">
+      <EntityTypeMapping TypeName="QLPhimModel.BaoGom">
+        <MappingFragment StoreEntitySet="BaoGom">
+          <ScalarProperty Name="BaoGomID" ColumnName="BaoGomID" />
+          <ScalarProperty Name="LichChieuID" ColumnName="LichChieuID" />
+          <ScalarProperty Name="PhimID" ColumnName="PhimID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CaChieux">
+      <EntityTypeMapping TypeName="QLPhimModel.CaChieu">
+        <MappingFragment StoreEntitySet="CaChieu">
+          <ScalarProperty Name="CaChieuID" ColumnName="CaChieuID" />
+          <ScalarProperty Name="GioBatDau" ColumnName="GioBatDau" />
+          <ScalarProperty Name="PhutBatDau" ColumnName="PhutBatDau" />
+          <ScalarProperty Name="SoPhut" ColumnName="SoPhut" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CongTies">
+      <EntityTypeMapping TypeName="QLPhimModel.CongTy">
+        <MappingFragment StoreEntitySet="CongTy">
+          <ScalarProperty Name="CongTyID" ColumnName="CongTyID" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="DienThoai" ColumnName="DienThoai" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="SoTuanLapLich" ColumnName="SoTuanLapLich" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ghes">
+      <EntityTypeMapping TypeName="QLPhimModel.Ghe">
+        <MappingFragment StoreEntitySet="Ghe">
+          <ScalarProperty Name="GheID" ColumnName="GheID" />
+          <ScalarProperty Name="x" ColumnName="x" />
+          <ScalarProperty Name="y" ColumnName="y" />
+          <ScalarProperty Name="PhongID" ColumnName="PhongID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LichChieux">
+      <EntityTypeMapping TypeName="QLPhimModel.LichChieu">
+        <MappingFragment StoreEntitySet="LichChieu">
+          <ScalarProperty Name="LichChieuID" ColumnName="LichChieuID" />
+          <ScalarProperty Name="NgayBatDau" ColumnName="NgayBatDau" />
+          <ScalarProperty Name="NgayKetThuc" ColumnName="NgayKetThuc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NguoiDungs">
+      <EntityTypeMapping TypeName="QLPhimModel.NguoiDung">
+        <MappingFragment StoreEntitySet="NguoiDung">
+          <ScalarProperty Name="NguoiDungID" ColumnName="NguoiDungID" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="NhomNguoiDungID" ColumnName="NhomNguoiDungID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhomNguoiDungs">
+      <EntityTypeMapping TypeName="QLPhimModel.NhomNguoiDung">
+        <MappingFragment StoreEntitySet="NhomNguoiDung">
+          <ScalarProperty Name="NhomNguoiDungID" ColumnName="NhomNguoiDungID" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="MaSo" ColumnName="MaSo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phims">
+      <EntityTypeMapping TypeName="QLPhimModel.Phim">
+        <MappingFragment StoreEntitySet="Phim">
+          <ScalarProperty Name="PhimID" ColumnName="PhimID" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="DaoDien" ColumnName="DaoDien" />
+          <ScalarProperty Name="DienVien" ColumnName="DienVien" />
+          <ScalarProperty Name="TheLoai" ColumnName="TheLoai" />
+          <ScalarProperty Name="PhienBan" ColumnName="PhienBan" />
+          <ScalarProperty Name="HangPhim" ColumnName="HangPhim" />
+          <ScalarProperty Name="NuocSanXuat" ColumnName="NuocSanXuat" />
+          <ScalarProperty Name="DoDai" ColumnName="DoDai" />
+          <ScalarProperty Name="Poster" ColumnName="Poster" />
+          <ScalarProperty Name="GioiThieu" ColumnName="GioiThieu" />
+          <ScalarProperty Name="Trailer" ColumnName="Trailer" />
+          <ScalarProperty Name="Pdf" ColumnName="Pdf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phongs">
+      <EntityTypeMapping TypeName="QLPhimModel.Phong">
+        <MappingFragment StoreEntitySet="Phong">
+          <ScalarProperty Name="PhongID" ColumnName="PhongID" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ves">
+      <EntityTypeMapping TypeName="QLPhimModel.Ve">
+        <MappingFragment StoreEntitySet="Ve">
+          <ScalarProperty Name="VeID" ColumnName="VeID" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="XuatChieuID" ColumnName="XuatChieuID" />
+          <ScalarProperty Name="GheID" ColumnName="GheID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="XuatChieux">
+      <EntityTypeMapping TypeName="QLPhimModel.XuatChieu">
+        <MappingFragment StoreEntitySet="XuatChieu">
+          <ScalarProperty Name="XuatChieuID" ColumnName="XuatChieuID" />
+          <ScalarProperty Name="Ngay" ColumnName="Ngay" />
+          <ScalarProperty Name="LichChieuID" ColumnName="LichChieuID" />
+          <ScalarProperty Name="CaChieuID" ColumnName="CaChieuID" />
+          <ScalarProperty Name="PhongID" ColumnName="PhongID" />
+          <ScalarProperty Name="PhimID" ColumnName="PhimID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

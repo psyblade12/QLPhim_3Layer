@@ -1,0 +1,4 @@
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimBDO\bin\Debug\QLPhimBDO.dll
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimBDO\bin\Debug\QLPhimBDO.pdb
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimBDO\obj\Debug\QLPhimBDO.dll
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimBDO\obj\Debug\QLPhimBDO.pdb

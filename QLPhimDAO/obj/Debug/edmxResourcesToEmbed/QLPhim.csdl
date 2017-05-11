@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLPhimModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BaoGom">
+    <Key>
+      <PropertyRef Name="BaoGomID" />
+    </Key>
+    <Property Name="BaoGomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LichChieuID" Type="Int32" Nullable="false" />
+    <Property Name="PhimID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="LichChieu" Relationship="Self.FK_BaoGom_LichChieu" FromRole="BaoGom" ToRole="LichChieu" />
+    <NavigationProperty Name="Phim" Relationship="Self.FK_BaoGom_Phim" FromRole="BaoGom" ToRole="Phim" />
+  </EntityType>
+  <EntityType Name="CaChieu">
+    <Key>
+      <PropertyRef Name="CaChieuID" />
+    </Key>
+    <Property Name="CaChieuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GioBatDau" Type="Int32" Nullable="false" />
+    <Property Name="PhutBatDau" Type="Int32" Nullable="false" />
+    <Property Name="SoPhut" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="XuatChieux" Relationship="Self.FK_XuatChieu_CaChieu" FromRole="CaChieu" ToRole="XuatChieu" />
+  </EntityType>
+  <EntityType Name="CongTy">
+    <Key>
+      <PropertyRef Name="CongTyID" />
+    </Key>
+    <Property Name="CongTyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DienThoai" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SoTuanLapLich" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ghe">
+    <Key>
+      <PropertyRef Name="GheID" />
+    </Key>
+    <Property Name="GheID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="x" Type="Int32" Nullable="false" />
+    <Property Name="y" Type="Int32" Nullable="false" />
+    <Property Name="PhongID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Phong" Relationship="Self.FK_Ghe_Phong" FromRole="Ghe" ToRole="Phong" />
+    <NavigationProperty Name="Ves" Relationship="Self.FK_Ve_Ghe" FromRole="Ghe" ToRole="Ve" />
+  </EntityType>
+  <EntityType Name="LichChieu">
+    <Key>
+      <PropertyRef Name="LichChieuID" />
+    </Key>
+    <Property Name="LichChieuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NgayBatDau" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NgayKetThuc" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="BaoGoms" Relationship="Self.FK_BaoGom_LichChieu" FromRole="LichChieu" ToRole="BaoGom" />
+    <NavigationProperty Name="XuatChieux" Relationship="Self.FK_XuatChieu_LichChieu" FromRole="LichChieu" ToRole="XuatChieu" />
+  </EntityType>
+  <EntityType Name="NguoiDung">
+    <Key>
+      <PropertyRef Name="NguoiDungID" />
+    </Key>
+    <Property Name="NguoiDungID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MatKhau" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NhomNguoiDungID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="NhomNguoiDung" Relationship="Self.FK_NguoiDung_NhomNguoiDung" FromRole="NguoiDung" ToRole="NhomNguoiDung" />
+  </EntityType>
+  <EntityType Name="NhomNguoiDung">
+    <Key>
+      <PropertyRef Name="NhomNguoiDungID" />
+    </Key>
+    <Property Name="NhomNguoiDungID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaSo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="NguoiDungs" Relationship="Self.FK_NguoiDung_NhomNguoiDung" FromRole="NhomNguoiDung" ToRole="NguoiDung" />
+  </EntityType>
+  <EntityType Name="Phim">
+    <Key>
+      <PropertyRef Name="PhimID" />
+    </Key>
+    <Property Name="PhimID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DaoDien" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DienVien" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TheLoai" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="PhienBan" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="HangPhim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NuocSanXuat" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DoDai" Type="Int32" Nullable="false" />
+    <Property Name="Poster" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="GioiThieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Trailer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Pdf" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BaoGoms" Relationship="Self.FK_BaoGom_Phim" FromRole="Phim" ToRole="BaoGom" />
+    <NavigationProperty Name="XuatChieux" Relationship="Self.FK_XuatChieu_Phim" FromRole="Phim" ToRole="XuatChieu" />
+  </EntityType>
+  <EntityType Name="Phong">
+    <Key>
+      <PropertyRef Name="PhongID" />
+    </Key>
+    <Property Name="PhongID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ten" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Ghes" Relationship="Self.FK_Ghe_Phong" FromRole="Phong" ToRole="Ghe" />
+    <NavigationProperty Name="XuatChieux" Relationship="Self.FK_XuatChieu_Phong" FromRole="Phong" ToRole="XuatChieu" />
+  </EntityType>
+  <EntityType Name="Ve">
+    <Key>
+      <PropertyRef Name="VeID" />
+    </Key>
+    <Property Name="VeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TrangThai" Type="Boolean" Nullable="false" />
+    <Property Name="XuatChieuID" Type="Int32" Nullable="false" />
+    <Property Name="GheID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Ghe" Relationship="Self.FK_Ve_Ghe" FromRole="Ve" ToRole="Ghe" />
+    <NavigationProperty Name="XuatChieu" Relationship="Self.FK_Ve_XuatChieu" FromRole="Ve" ToRole="XuatChieu" />
+  </EntityType>
+  <EntityType Name="XuatChieu">
+    <Key>
+      <PropertyRef Name="XuatChieuID" />
+    </Key>
+    <Property Name="XuatChieuID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ngay" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LichChieuID" Type="Int32" Nullable="false" />
+    <Property Name="CaChieuID" Type="Int32" Nullable="false" />
+    <Property Name="PhongID" Type="Int32" Nullable="false" />
+    <Property Name="PhimID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CaChieu" Relationship="Self.FK_XuatChieu_CaChieu" FromRole="XuatChieu" ToRole="CaChieu" />
+    <NavigationProperty Name="LichChieu" Relationship="Self.FK_XuatChieu_LichChieu" FromRole="XuatChieu" ToRole="LichChieu" />
+    <NavigationProperty Name="Phim" Relationship="Self.FK_XuatChieu_Phim" FromRole="XuatChieu" ToRole="Phim" />
+    <NavigationProperty Name="Phong" Relationship="Self.FK_XuatChieu_Phong" FromRole="XuatChieu" ToRole="Phong" />
+    <NavigationProperty Name="Ves" Relationship="Self.FK_Ve_XuatChieu" FromRole="XuatChieu" ToRole="Ve" />
+  </EntityType>
+  <Association Name="FK_BaoGom_LichChieu">
+    <End Role="LichChieu" Type="Self.LichChieu" Multiplicity="1" />
+    <End Role="BaoGom" Type="Self.BaoGom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LichChieu">
+        <PropertyRef Name="LichChieuID" />
+      </Principal>
+      <Dependent Role="BaoGom">
+        <PropertyRef Name="LichChieuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BaoGom_Phim">
+    <End Role="Phim" Type="Self.Phim" Multiplicity="1" />
+    <End Role="BaoGom" Type="Self.BaoGom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phim">
+        <PropertyRef Name="PhimID" />
+      </Principal>
+      <Dependent Role="BaoGom">
+        <PropertyRef Name="PhimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XuatChieu_CaChieu">
+    <End Role="CaChieu" Type="Self.CaChieu" Multiplicity="1" />
+    <End Role="XuatChieu" Type="Self.XuatChieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CaChieu">
+        <PropertyRef Name="CaChieuID" />
+      </Principal>
+      <Dependent Role="XuatChieu">
+        <PropertyRef Name="CaChieuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ghe_Phong">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="1" />
+    <End Role="Ghe" Type="Self.Ghe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="PhongID" />
+      </Principal>
+      <Dependent Role="Ghe">
+        <PropertyRef Name="PhongID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ve_Ghe">
+    <End Role="Ghe" Type="Self.Ghe" Multiplicity="1" />
+    <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ghe">
+        <PropertyRef Name="GheID" />
+      </Principal>
+      <Dependent Role="Ve">
+        <PropertyRef Name="GheID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XuatChieu_LichChieu">
+    <End Role="LichChieu" Type="Self.LichChieu" Multiplicity="1" />
+    <End Role="XuatChieu" Type="Self.XuatChieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LichChieu">
+        <PropertyRef Name="LichChieuID" />
+      </Principal>
+      <Dependent Role="XuatChieu">
+        <PropertyRef Name="LichChieuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NguoiDung_NhomNguoiDung">
+    <End Role="NhomNguoiDung" Type="Self.NhomNguoiDung" Multiplicity="1" />
+    <End Role="NguoiDung" Type="Self.NguoiDung" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NhomNguoiDung">
+        <PropertyRef Name="NhomNguoiDungID" />
+      </Principal>
+      <Dependent Role="NguoiDung">
+        <PropertyRef Name="NhomNguoiDungID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XuatChieu_Phim">
+    <End Role="Phim" Type="Self.Phim" Multiplicity="1" />
+    <End Role="XuatChieu" Type="Self.XuatChieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phim">
+        <PropertyRef Name="PhimID" />
+      </Principal>
+      <Dependent Role="XuatChieu">
+        <PropertyRef Name="PhimID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_XuatChieu_Phong">
+    <End Role="Phong" Type="Self.Phong" Multiplicity="1" />
+    <End Role="XuatChieu" Type="Self.XuatChieu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Phong">
+        <PropertyRef Name="PhongID" />
+      </Principal>
+      <Dependent Role="XuatChieu">
+        <PropertyRef Name="PhongID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ve_XuatChieu">
+    <End Role="XuatChieu" Type="Self.XuatChieu" Multiplicity="1" />
+    <End Role="Ve" Type="Self.Ve" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XuatChieu">
+        <PropertyRef Name="XuatChieuID" />
+      </Principal>
+      <Dependent Role="Ve">
+        <PropertyRef Name="XuatChieuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLPhimEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BaoGoms" EntityType="Self.BaoGom" />
+    <EntitySet Name="CaChieux" EntityType="Self.CaChieu" />
+    <EntitySet Name="CongTies" EntityType="Self.CongTy" />
+    <EntitySet Name="Ghes" EntityType="Self.Ghe" />
+    <EntitySet Name="LichChieux" EntityType="Self.LichChieu" />
+    <EntitySet Name="NguoiDungs" EntityType="Self.NguoiDung" />
+    <EntitySet Name="NhomNguoiDungs" EntityType="Self.NhomNguoiDung" />
+    <EntitySet Name="Phims" EntityType="Self.Phim" />
+    <EntitySet Name="Phongs" EntityType="Self.Phong" />
+    <EntitySet Name="Ves" EntityType="Self.Ve" />
+    <EntitySet Name="XuatChieux" EntityType="Self.XuatChieu" />
+    <AssociationSet Name="FK_BaoGom_LichChieu" Association="Self.FK_BaoGom_LichChieu">
+      <End Role="LichChieu" EntitySet="LichChieux" />
+      <End Role="BaoGom" EntitySet="BaoGoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BaoGom_Phim" Association="Self.FK_BaoGom_Phim">
+      <End Role="Phim" EntitySet="Phims" />
+      <End Role="BaoGom" EntitySet="BaoGoms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XuatChieu_CaChieu" Association="Self.FK_XuatChieu_CaChieu">
+      <End Role="CaChieu" EntitySet="CaChieux" />
+      <End Role="XuatChieu" EntitySet="XuatChieux" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ghe_Phong" Association="Self.FK_Ghe_Phong">
+      <End Role="Phong" EntitySet="Phongs" />
+      <End Role="Ghe" EntitySet="Ghes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ve_Ghe" Association="Self.FK_Ve_Ghe">
+      <End Role="Ghe" EntitySet="Ghes" />
+      <End Role="Ve" EntitySet="Ves" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XuatChieu_LichChieu" Association="Self.FK_XuatChieu_LichChieu">
+      <End Role="LichChieu" EntitySet="LichChieux" />
+      <End Role="XuatChieu" EntitySet="XuatChieux" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NguoiDung_NhomNguoiDung" Association="Self.FK_NguoiDung_NhomNguoiDung">
+      <End Role="NhomNguoiDung" EntitySet="NhomNguoiDungs" />
+      <End Role="NguoiDung" EntitySet="NguoiDungs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XuatChieu_Phim" Association="Self.FK_XuatChieu_Phim">
+      <End Role="Phim" EntitySet="Phims" />
+      <End Role="XuatChieu" EntitySet="XuatChieux" />
+    </AssociationSet>
+    <AssociationSet Name="FK_XuatChieu_Phong" Association="Self.FK_XuatChieu_Phong">
+      <End Role="Phong" EntitySet="Phongs" />
+      <End Role="XuatChieu" EntitySet="XuatChieux" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ve_XuatChieu" Association="Self.FK_Ve_XuatChieu">
+      <End Role="XuatChieu" EntitySet="XuatChieux" />
+      <End Role="Ve" EntitySet="Ves" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

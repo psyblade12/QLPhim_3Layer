@@ -1,0 +1,11 @@
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimLogic\bin\Debug\QLPhimLogic.dll
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimLogic\bin\Debug\QLPhimLogic.pdb
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimLogic\bin\Debug\QLPhimBDO.dll
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimLogic\bin\Debug\QLPhimDAO.dll
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimLogic\bin\Debug\EntityFramework.dll
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimLogic\bin\Debug\QLPhimBDO.pdb
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimLogic\bin\Debug\QLPhimDAO.pdb
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimLogic\bin\Debug\EntityFramework.xml
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimLogic\obj\Debug\QLPhimLogic.csprojResolveAssemblyReference.cache
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimLogic\obj\Debug\QLPhimLogic.dll
+c:\users\thuan\documents\visual studio 2015\Projects\QLPhim_3Layer\QLPhimLogic\obj\Debug\QLPhimLogic.pdb
